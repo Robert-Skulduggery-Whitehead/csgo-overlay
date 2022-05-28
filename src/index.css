@@ -1,13 +1,96 @@
+@import "fonts/montserrat.css";
+@import "./fonts/concertone.css";
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Montserrat", "sans-serif", "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --color: #1d2b41;
+
+  --color-t: #ff6e00;
+  --color-ct: #0091ff;
+
+  --color-white: #ffffff;
+  --golor-grey: #888888;
+  --color-black: #1a1a1a;
+  --color-red: #9f281a;
+
+  --color-bomb: #f7580b;
+  --color-defuse: #08a7f4;
+
+  --color-moneys: #a7d32e;
+  --color-spent: #ef281a;
+
+  --ct-filter: brightness(0) saturate(100%) invert(37%) sepia(36%)
+    saturate(3816%) hue-rotate(188deg) brightness(105%) contrast(102%);
+  --t-filter: brightness(0) saturate(100%) invert(46%) sepia(29%)
+    saturate(7273%) hue-rotate(6deg) brightness(110%) contrast(102%);
+
+  --bomb-filter: brightness(0) saturate(100%) invert(19%) sepia(74%)
+    saturate(6224%) hue-rotate(357deg) brightness(106%) contrast(87%);
+  --defuse-filter: brightness(0) saturate(100%) invert(61%) sepia(96%)
+    saturate(3263%) hue-rotate(167deg) brightness(98%) contrast(97%);
+}
+
+.gray {
+  color: gray;
+}
+
+.t {
+  color: var(--color-t);
+}
+.ct {
+  color: var(--color-ct);
+}
+
+.tBackground {
+  background-color: var(--color-t);
+}
+
+.ctBackground {
+  background-color: var(--color-ct);
+}
+
+.tShadow {
+  filter: drop-shadow(0px 0px 3px var(--color-t));
+}
+
+.ctShadow {
+  filter: drop-shadow(0px 0px 3px var(--color-ct));
+}
+
+.tOutline {
+  outline-color: var(--color-t);
+}
+
+.ctOutline {
+  outline-color: var(--color-ct);
+}
+
+.ctImage {
+  filter: var(--ct-filter);
+}
+
+.tImage {
+  filter: var(--t-filter);
+}
+
+.bombPlayerImage {
+  filter: var(--bomb-filter);
 }

@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Layout from "./HUD/Layout/Layout";
+import io from "socket.io-client";
+import { useEffect, useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  var display = "gameOverlay";
+  const [socket, setSocket] = useState();
+
+  useEffect(() => {
+    const newSocket = io("http://127.0.0.1:3001");
+    setSocket(newSocket);
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
+
+  if (display === "gameOverlay" && socket) {
+    return (
+      <div>
+        <Layout socket={socket}></Layout>
+      </div>
+    );
+  } else {
+    return <div className="App"></div>;
+  }
 }
 
 export default App;

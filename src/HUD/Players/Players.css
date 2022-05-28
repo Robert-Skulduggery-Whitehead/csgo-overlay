@@ -1,0 +1,44 @@
+.allPlayers {
+    /*player bars = 70px*/
+  }
+  
+  .allPlayersContainer {
+    position: fixed;
+    bottom: 20px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 355px;
+    height: 362px;
+    row-gap: 3px;
+    grid-template-rows: 70px 70px 70px 70px 70px;
+  }
+  
+  .allPlayersContainerLeft {
+    left: 20px;
+  }
+  
+  .allPlayersContainerRight {
+    right: 20px;
+  }
+  
+  .allPlayersNumbersContainer {
+    position: fixed;
+    bottom: 360px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 20px;
+    height: 20px;
+    row-gap: 3px;
+    grid-template-rows: 70px 70px 70px 70px 70px;
+  }
+  
+  .allPlayersNumbersContainerLeft {
+    left: 5px;
+  }
+  
+  .allPlayersNumbersContainerRight {
+    right: 15px;
+  }
+  

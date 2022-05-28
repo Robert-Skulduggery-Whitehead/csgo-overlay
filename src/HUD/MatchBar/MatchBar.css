@@ -1,0 +1,22 @@
+
+/*Side colours*/
+.t {
+  color: var(--color-t);
+}
+
+.ct {
+  color: var(--color-ct);
+}
+
+/*Keyframes*/
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
