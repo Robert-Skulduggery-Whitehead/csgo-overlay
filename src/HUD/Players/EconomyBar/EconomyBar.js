@@ -32,8 +32,9 @@ export default class EconomyBar extends React.Component {
           this.state.consecutiveLoss !==
           this.props.map.team_ct.consecutive_round_losses
         ) {
-          this.state.consecutiveLoss =
-            this.props.map.team_ct.consecutive_round_losses;
+          this.setState({
+            consecutiveLoss: this.props.map.team_ct.consecutive_round_losses,
+          });
           this.setLossBonus(this.props.map.team_ct.consecutive_round_losses);
         }
       } else {
@@ -41,16 +42,14 @@ export default class EconomyBar extends React.Component {
           this.state.consecutiveLoss !==
           this.props.map.team_t.consecutive_round_losses
         ) {
-          this.state.consecutiveLoss =
-            this.props.map.team_t.consecutive_round_losses;
-          console.log(this.state.consecutiveLoss);
+          this.setState({
+            consecutiveLoss: this.props.map.team_t.consecutive_round_losses,
+          });
           this.setLossBonus(this.props.map.team_t.consecutive_round_losses);
         }
       }
     }
   }
-
-  componentDidMount() {}
 
   setLossBonus(consecLoss) {
     if (consecLoss === 0) {

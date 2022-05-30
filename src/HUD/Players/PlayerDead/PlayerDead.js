@@ -14,14 +14,14 @@ export default class PlayerDead extends React.Component {
     return (
       <div class={"playerDeadContainer playerDeadContainer" + this.props.side}>
         <div class={"playerDeadImageContainer"}>
-          {this.props.player.image === "" && (
+          {this.props.player.image === ("" || undefined) && (
             <img
               class="playerDeadImage"
               src={"./teamImages/" + this.props.teamLogo}
               alt=""
             ></img>
           )}
-          {this.props.player.image !== "" && (
+          {this.props.player.image !== ("" || undefined) && (
             <img
               class="playerDeadImage"
               src={"./playerImages/" + this.props.player.image}

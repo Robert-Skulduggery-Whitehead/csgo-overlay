@@ -1,6 +1,7 @@
 import React from "react";
 import MatchBar from "../MatchBar/MatchBar";
 import Players from "../Players/Players";
+import PlayerOverview from "../PlayerOverview/PlayerOverview";
 //import all
 
 export default class Layout extends React.Component {
@@ -10,6 +11,12 @@ export default class Layout extends React.Component {
       showHUD: false,
       data: {},
       killfeed: false,
+      //player state
+      playerState: {
+        team: "ct",
+        teamInfo: {},
+        bomb: false,
+      },
       //sides
       sides: {
         left: "ct",
@@ -50,13 +57,40 @@ export default class Layout extends React.Component {
           game3: {
             map: "inferno",
             picked: "decider",
-            winner: "",
+            winner: "current",
             winnerScore: "",
             loserScore: "",
           },
         },
       },
     };
+  }
+
+  updatePlayerState() {
+    let bomb, team, teamInfo;
+    if (this.state.data.player.steamid === this.state.data.bomb.player) {
+      bomb = true;
+    } else {
+      bomb = false;
+    }
+    if (
+      this.state.data.player.observerslot === 0 ||
+      this.state.data.player.observerslot > 5
+    ) {
+      team = this.state.sides.right;
+      teamInfo = this.state.teams.right;
+    } else {
+      team = this.state.sides.left;
+      teamInfo = this.state.teams.left;
+    }
+
+    this.setState({
+      playerState: {
+        bomb: bomb,
+        team: team,
+        teamInfo: teamInfo,
+      },
+    });
   }
 
   setSides(allplayers) {
@@ -146,6 +180,7 @@ export default class Layout extends React.Component {
       this.setState({
         data: data,
       });
+      this.updatePlayerState();
     });
 
     this.props.socket.on("swapTeams", () => {
@@ -196,6 +231,13 @@ export default class Layout extends React.Component {
             sides={this.state.sides}
             bomb={this.state.data.bomb}
             round={this.state.data.round}
+          />
+          <PlayerOverview
+            player={this.state.data.player}
+            playerState={this.state.playerState}
+            //teams={this.state.teams}
+            //sides={this.state.sides}
+            //bomb={this.state.data.bomb}
           />
         </React.Fragment>
       );
