@@ -1,0 +1,63 @@
+.mapContainer {
+    width: 410px;
+    height: 410px;
+    top: 10px;
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+    color: white;
+  }
+  
+  .mapPlayer {
+    position: absolute;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    left: 50%;
+    top: 50%;
+  }
+  
+  .mapPlayerActive {
+    filter: drop-shadow(-1px -1px 0px white) drop-shadow(1px -1px 0px white)
+      drop-shadow(1px 1px 0px white) drop-shadow(-1px 1px 0px white);
+    z-index: 999;
+  }
+  
+  .mapPlayerAlive {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .mapPlayerDead {
+    display: grid;
+    font-family: "Concert One";
+  }
+  
+  .mapPlayerImage {
+    width: 12px;
+    grid-area: 1 / 1 / 1 / 1;
+  }
+  
+  .mapPlayerNumber {
+    color: #1a1a1a;
+    font-size: 10px;
+    font-family: "Concert One";
+    grid-area: 1 / 1 / 1 / 1;
+    z-index: 1;
+  }
+  
+  .mapBomb {
+    position: absolute;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    left: 50%;
+    top: 50%;
+  }
+  
+  .mapBombImage {
+    width: 12px;
+    filter: var(--bomb-filter);
+  }
+  

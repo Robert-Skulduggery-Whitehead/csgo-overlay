@@ -2,6 +2,7 @@ import React from "react";
 import MatchBar from "../MatchBar/MatchBar";
 import Players from "../Players/Players";
 import PlayerOverview from "../PlayerOverview/PlayerOverview";
+import Radar from "../Radar/Radar";
 //import all
 
 export default class Layout extends React.Component {
@@ -235,9 +236,13 @@ export default class Layout extends React.Component {
           <PlayerOverview
             player={this.state.data.player}
             playerState={this.state.playerState}
-            //teams={this.state.teams}
-            //sides={this.state.sides}
-            //bomb={this.state.data.bomb}
+          />
+          <Radar
+            allplayers={this.state.data.allplayers}
+            map={this.state.data.map}
+            bomb={this.state.data.bomb}
+            player={this.state.data.player}
+            grenades={this.state.data.grenades}
           />
         </React.Fragment>
       );
