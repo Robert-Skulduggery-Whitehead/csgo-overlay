@@ -18,13 +18,13 @@ export default class Players extends React.Component {
       <React.Fragment>
         <UtilBar
           allplayers={this.props.allplayers}
-          team={this.props.sides.left}
+          team={this.props.left.side}
           side="Left"
           round={this.props.round}
         ></UtilBar>
         <EconomyBar
           allplayers={this.props.allplayers}
-          team={this.props.sides.left}
+          team={this.props.left.side}
           side="Left"
           map={this.props.map}
           round={this.props.round}
@@ -33,16 +33,16 @@ export default class Players extends React.Component {
           {Object.keys(this.props.allplayers).map((playerID) => {
             if (
               this.props.allplayers[playerID].team ===
-              this.props.sides.left.toUpperCase()
+              this.props.left.side.toUpperCase()
             ) {
               if (this.props.allplayers[playerID].state.health !== 0) {
                 return (
                   <PlayerAlive
                     key={playerID}
-                    team={this.props.sides.left}
+                    team={this.props.left.side}
                     side={"Left"}
                     player={this.props.allplayers[playerID]}
-                    teamLogo={this.props.teams.left.img}
+                    teamLogo={this.props.left.image}
                     bomb={this.props.bomb}
                     playerID={playerID}
                   ></PlayerAlive>
@@ -51,10 +51,10 @@ export default class Players extends React.Component {
                 return (
                   <PlayerDead
                     key={playerID}
-                    team={this.props.sides.left}
+                    team={this.props.left.side}
                     side={"Left"}
                     player={this.props.allplayers[playerID]}
-                    teamLogo={this.props.teams.left.img}
+                    teamLogo={this.props.left.image}
                   ></PlayerDead>
                 );
               }
@@ -65,7 +65,7 @@ export default class Players extends React.Component {
           {Object.keys(this.props.allplayers).map((playerID) => {
             if (
               this.props.allplayers[playerID].team ===
-              this.props.sides.left.toUpperCase()
+              this.props.left.side.toUpperCase()
             ) {
               return (
                 <PlayerNumber
@@ -78,13 +78,13 @@ export default class Players extends React.Component {
         </div>
         <UtilBar
           allplayers={this.props.allplayers}
-          team={this.props.sides.right}
+          team={this.props.right.side}
           side="Right"
           round={this.props.round}
         ></UtilBar>
         <EconomyBar
           allplayers={this.props.allplayers}
-          team={this.props.sides.right}
+          team={this.props.right.side}
           side="Right"
           map={this.props.map}
           round={this.props.round}
@@ -93,16 +93,16 @@ export default class Players extends React.Component {
           {Object.keys(this.props.allplayers).map((playerID) => {
             if (
               this.props.allplayers[playerID].team ===
-              this.props.sides.right.toUpperCase()
+              this.props.right.side.toUpperCase()
             ) {
               if (this.props.allplayers[playerID].state.health !== 0) {
                 return (
                   <PlayerAlive
                     key={playerID}
-                    team={this.props.sides.right}
+                    team={this.props.right.side}
                     side={"Right"}
                     player={this.props.allplayers[playerID]}
-                    teamLogo={this.props.teams.right.img}
+                    teamLogo={this.props.right.image}
                     bomb={this.props.bomb}
                     playerID={playerID}
                   ></PlayerAlive>
@@ -111,10 +111,10 @@ export default class Players extends React.Component {
                 return (
                   <PlayerDead
                     key={playerID}
-                    team={this.props.sides.right}
+                    team={this.props.right.side}
                     side={"Right"}
                     player={this.props.allplayers[playerID]}
-                    teamLogo={this.props.teams.right.img}
+                    teamLogo={this.props.right.image}
                   ></PlayerDead>
                 );
               }
@@ -125,7 +125,7 @@ export default class Players extends React.Component {
           {Object.keys(this.props.allplayers).map((playerID) => {
             if (
               this.props.allplayers[playerID].team ===
-              this.props.sides.right.toUpperCase()
+              this.props.right.side.toUpperCase()
             ) {
               return (
                 <PlayerNumber

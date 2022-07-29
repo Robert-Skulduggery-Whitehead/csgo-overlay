@@ -3,7 +3,7 @@ import "./Team.css";
 
 export default class Team extends React.Component {
   constructor(props) {
-    //props: class, team, bomb, allplayers, map, side
+    //props: class, team, bomb, allplayers, map, team.side
     super(props);
     this.state = {};
   }
@@ -14,7 +14,7 @@ export default class Team extends React.Component {
         <div class={"teamLogo " + this.props.class + "Logo"}>
           <img
             class="teamLogoImage"
-            src={"./teamImages/" + this.props.team.img}
+            src={"./teamImages/" + this.props.team.image}
             alt=""
           ></img>
         </div>
@@ -24,16 +24,18 @@ export default class Team extends React.Component {
             "teamScoreShadow " +
             this.props.class +
             "ScoreShadow" +
-            this.props.side
+            this.props.team.side
           }
         >
           <div
-            class={"teamScore " + this.props.class + "Score " + this.props.side}
+            class={
+              "teamScore " + this.props.class + "Score " + this.props.team.side
+            }
           >
-            {this.props.side === "ct" && (
+            {this.props.team.side === "ct" && (
               <div>{this.props.map.team_ct.score}</div>
             )}
-            {this.props.side === "t" && (
+            {this.props.team.side === "t" && (
               <div>{this.props.map.team_t.score}</div>
             )}
           </div>

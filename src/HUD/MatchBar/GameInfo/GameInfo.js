@@ -3,7 +3,6 @@ import "./GameInfo.css";
 
 export default class GameInfo extends React.Component {
   constructor(props) {
-    //props: series, teams, sides, round
     super(props);
     this.state = {};
   }
@@ -12,15 +11,12 @@ export default class GameInfo extends React.Component {
     return (
       <div class="gameInfo">
         <div class={"seriesWinsLeft seriesLength" + this.props.series.bestOf}>
-          {Object.keys(this.props.series.games).map((gameNo) => {
-            if (
-              this.props.series.games[gameNo].winner ===
-              this.props.teams.left.name
-            ) {
+          {Object.keys(this.props.games).map((gameNo) => {
+            if (this.props.games[gameNo].winner === this.props.left.name) {
               return (
                 <div
                   key={gameNo}
-                  class={"seriesDot " + this.props.sides.left + "Dot"}
+                  class={"seriesDot " + this.props.left.side + "Dot"}
                 ></div>
               );
             } else {
@@ -41,15 +37,12 @@ export default class GameInfo extends React.Component {
           BEST OF {this.props.series.bestOf}
         </div>
         <div class={"seriesWinsRight seriesLength" + this.props.series.bestOf}>
-          {Object.keys(this.props.series.games).map((gameNo) => {
-            if (
-              this.props.series.games[gameNo].winner ===
-              this.props.teams.right.name
-            ) {
+          {Object.keys(this.props.games).map((gameNo) => {
+            if (this.props.games[gameNo].winner === this.props.right.name) {
               return (
                 <div
                   key={gameNo}
-                  class={"seriesDot " + this.props.sides.right + "Dot"}
+                  class={"seriesDot " + this.props.right.side + "Dot"}
                 ></div>
               );
             } else {

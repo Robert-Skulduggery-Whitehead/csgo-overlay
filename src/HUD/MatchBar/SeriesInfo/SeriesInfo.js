@@ -12,53 +12,53 @@ export default class SeriesInfo extends React.Component {
     if (this.props.round.phase === "freezetime") {
       return (
         <div class={"seriesInfo seriesInfo" + this.props.series.bestOf}>
-          {Object.keys(this.props.series.games).map((gameId) => {
+          {Object.keys(this.props.games).map((gameId) => {
             if (parseInt(gameId.substring(4, 5)) <= this.props.series.bestOf) {
               return (
                 <div class="seriesMapInfo">
                   <div class="seriesMapInfoTop">
-                    {this.props.series.games[gameId].map}{" "}
-                    {this.props.series.games[gameId].winner !== "current" &&
-                      this.props.series.games[gameId].winner !== "tbp" && (
+                    {this.props.games[gameId].map}{" "}
+                    {this.props.games[gameId].winner !== "current" &&
+                      this.props.games[gameId].winner !== "tbp" && (
                         <span>
                           <img
                             class="seriesMapInfoImage"
-                            src={"./teamImages/" + this.props.teams.left.img}
+                            src={"./teamImages/" + this.props.left.image}
                             alt=""
                           ></img>
-                          {this.props.teams.left.name ===
-                            this.props.series.games[gameId].winner && (
+                          {this.props.left.name ===
+                            this.props.games[gameId].winner && (
                             <span>
-                              {this.props.series.games[gameId].winnerScore}-
-                              {this.props.series.games[gameId].loserScore}
+                              {this.props.games[gameId].winnerScore}-
+                              {this.props.games[gameId].loserScore}
                             </span>
                           )}
-                          {this.props.teams.right.name ===
-                            this.props.series.games[gameId].winner && (
+                          {this.props.right.name ===
+                            this.props.games[gameId].winner && (
                             <span>
-                              {this.props.series.games[gameId].loserScore}-
-                              {this.props.series.games[gameId].winnerScore}
+                              {this.props.games[gameId].loserScore}-
+                              {this.props.games[gameId].winnerScore}
                             </span>
                           )}
                           <img
                             class="seriesMapInfoImage"
-                            src={"./teamImages/" + this.props.teams.right.img}
+                            src={"./teamImages/" + this.props.right.image}
                             alt=""
                           ></img>
                         </span>
                       )}
-                    {this.props.series.games[gameId].winner === "current" && (
+                    {this.props.games[gameId].winner === "current" && (
                       <span class="seriesMapInfoCurrent">Current</span>
                     )}
                   </div>
                   <div class="seriesMapInfoBottom">
-                    {this.props.series.games[gameId].picked !== "decider" && (
+                    {this.props.games[gameId].picked !== "decider" && (
                       <span>
                         <span class="seriesMapInfoPickedBy">PICKED BY </span>
-                        {this.props.series.games[gameId].picked}
+                        {this.props.games[gameId].picked}
                       </span>
                     )}
-                    {this.props.series.games[gameId].picked === "decider" && (
+                    {this.props.games[gameId].picked === "decider" && (
                       <span>Decider Map</span>
                     )}
                   </div>

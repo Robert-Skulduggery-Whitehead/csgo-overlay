@@ -92,7 +92,7 @@ export default class PlayerOverview extends React.Component {
           <img
             class="spectatedPlayerTeamLogo"
             alt=""
-            src={"./teamImages/" + this.props.playerState.teamInfo.img}
+            src={"./teamImages/" + this.props.playerState.teamInfo.image}
           ></img>
         </div>
         <div class="spectatedPlayerHealthBarContainer">

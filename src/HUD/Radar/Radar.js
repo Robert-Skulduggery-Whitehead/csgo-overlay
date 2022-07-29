@@ -130,6 +130,7 @@ export default class Radar extends React.Component {
 
   render() {
     return (
+      //Fix for old maps change to workshop maps instread of normal ones
       <div
         class="mapContainer"
         style={{ backgroundImage: `url(${this.state.map})` }}

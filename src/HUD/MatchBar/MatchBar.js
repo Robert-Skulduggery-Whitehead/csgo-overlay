@@ -41,31 +41,33 @@ export default class MatchBar extends React.Component {
       <React.Fragment>
         <SeriesInfo
           series={this.props.series}
-          teams={this.props.teams}
+          left={this.props.left}
+          right={this.props.right}
           round={this.props.round}
+          games={this.props.games}
         />
         <GameInfo
           series={this.props.series}
-          teams={this.props.teams}
+          games={this.props.games}
+          left={this.props.left}
+          right={this.props.right}
           sides={this.props.sides}
           round={this.state.round}
           totalRounds={this.state.totalRounds}
         />
         <Team
           class={"teamLeft"}
-          team={this.props.teams.left}
+          team={this.props.left}
           bomb={this.props.bomb}
           allplayers={this.props.allplayers}
           map={this.props.map}
-          side={this.props.sides.left}
         ></Team>
         <Team
           class={"teamRight"}
-          team={this.props.teams.right}
+          team={this.props.right}
           bomb={this.props.bomb}
           allplayers={this.props.allplayers}
           map={this.props.map}
-          side={this.props.sides.right}
         ></Team>
         <Timer
           phase_countdowns={this.props.phase_countdowns}
