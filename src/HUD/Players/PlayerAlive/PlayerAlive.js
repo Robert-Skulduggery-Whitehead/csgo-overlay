@@ -19,14 +19,14 @@ export default class PlayerAlive extends React.Component {
         class={"playerAliveContainer playerAliveContainer" + this.props.side}
       >
         <div class={"playerAliveImageContainer"}>
-          {this.props.player.image === ("" && undefined) && (
+          {this.props.player.image === ("" || undefined) && (
             <img
               class="playerAliveImage"
               src={"./teamImages/" + this.props.teamLogo}
               alt=""
             ></img>
           )}
-          {this.props.player.image !== ("" && undefined) && (
+          {this.props.player.image !== ("" || undefined) && (
             <img
               class="playerAliveImage"
               src={"./playerImages/" + this.props.player.image}
