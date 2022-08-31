@@ -19,7 +19,7 @@ export default class MatchBar extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    let tempRound = this.state.round;
+    let tempRound = this.props.map.round;
     let tempTotalRounds = 30;
     if (tempRound > 30) {
       tempRound = tempRound - 30;
