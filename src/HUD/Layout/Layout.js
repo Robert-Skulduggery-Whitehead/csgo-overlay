@@ -54,6 +54,7 @@ export default class Layout extends React.Component {
           <PlayerOverview
             player={this.state.data.player}
             playerState={this.state.data.playerState}
+            bomb={this.state.data.bomb}
           />
           <Radar
             allplayers={this.state.data.allplayers}
